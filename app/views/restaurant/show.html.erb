@@ -1,10 +1,21 @@
-<div class="container">
-  <div class="row h-100 justify-content-center" style="S">
-    <div class="col-md-auto">
-      <img src="https://dummyimage.com/1250x500/000/fff" class="img-fluid"alt="Responsive image" style="width:100%;">
-    </div>
-    
-  </div>
+<style>
+.parallax {
+    /* The image used */
+    background-image: url("https://dummyimage.com/600x500/000/fff");
+
+    /* Set a specific height */
+    min-height: 400px;
+    min-width: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+
+<div class="container parallax">
 </div>
 
 
@@ -31,3 +42,4 @@
     <div class="col-md-auto"> <h1>Este restaurante parece no tener menu.</h1></div>
   </div>
 <% end %>
+
