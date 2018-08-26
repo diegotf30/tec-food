@@ -2,7 +2,7 @@ namespace :sample_db do
   desc "Basic sample models for testing"
   task generate: :environment do
     Restaurant.create(name: 'Centrales', opening_hour: '7:00', closing_hour: '20:00', active_days: ['all'])
-    Restaurant.create(name: 'Jubileo', opening_hour: '9:00', closing_hour: '5:00', active_days: ['mon, tue, wed, thu, fri'])
+    Restaurant.create(name: 'Jubileo', opening_hour: '9:00', closing_hour: '5:00', active_days: ['mon', 'tue', 'wed', 'thu', 'fri'])
 
     Restaurant.find_each do |r|
       Product.create(name: r.name, restaurant: r, name: 'Chilaquiles', price: 34)
