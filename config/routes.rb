@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :new]
-
   resources :restaurant, only: [:show]
+  resources :orders, only: [:index, :show]
 end
