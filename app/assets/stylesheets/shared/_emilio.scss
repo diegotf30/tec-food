@@ -56,17 +56,25 @@
 }
 
 .status-container{
+    height: 260px;
     border-color: #eee;
     border-style: solid;
     border-image-width: 1px;
-
+    padding-left: auto;
+    padding-right: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .order-details{
+    float: right;
     text-align: left;
     color: #5cb85c;
-    position: relative;
-    left: 100px;
+    margin-right: 5em;
+}
+
+.order-img{
+    float: left;
 }
 
 .circleBase {
@@ -76,6 +84,6 @@
     height: 200px;
     border: 6px dashed;
     border-color: #5cb85c;
-
+    margin-left: 5em;
 }
 
