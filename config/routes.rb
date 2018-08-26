@@ -20,6 +20,13 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :new]
-  resources :restaurant, only: [:show]
+  resources :restaurant, only: [:show, :index] do
+    get 'menu', :to => 'restaurant#menu'
+    get 'daily_meal', :to => 'restaurant#daily_meal'
+    get 'hours', :to => 'restaurant#hours'
+    get 'waiting_time', :to => 'restaurant#waiting_time'
+    post 'order', :to => 'restaurant#order'
+    # get 'seating', :to => 'restaurant#seating'
+  end
   resources :orders, only: [:index, :show]
 end
