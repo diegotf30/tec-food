@@ -15,6 +15,7 @@ body {
 }
 
 .page-title{
+    font-family: 'lobster';
     margin-top: 25px;
     text-align: center;
     color: rgb(122, 112, 112)
@@ -66,6 +67,7 @@ footer {
     border-image-width: 1px;
     margin-top: 25px;
     margin-bottom: 25px;
+    overflow: visible;
 }
 
 .order-details{
@@ -73,6 +75,7 @@ footer {
     text-align: left;
     color: #5cb85c;
     margin-right: 3em;
+    font-family: 'Patrick Hand SC', cursive;
 }
 
 .order-img {
