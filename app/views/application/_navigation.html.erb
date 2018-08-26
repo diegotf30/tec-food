@@ -20,7 +20,7 @@
       </span>
     <%# else %>
       <span class="navbar-text bold">
-        <%#= button_to "Login", destroy_member_session_path, method: :delete, class: "btn btn-danger bold", id: "sign_out" %>
+        <%= button_to "Login", new_user_path, method: :get, class: "btn btn-teal bold", id: "sign_in" %>
       </span>
     <%# end %>
   </div>

@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # devise_for :users, controllers: {
-  #   sessions: "auth/sessions",
-  #   registrations: "auth/registrations"
-  # }
-
   # namespace :admin do
   #   resources :members
   #   resources :groups
