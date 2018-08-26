@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <%= link_to "TecFood", root_path, class: 'navbar-brand' %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li id="countries" class="nav-item active <%= 'bold' if current_page?(root_path) %>">
-        <div class="nav-link">Elemento 1</div>
+        <div class="nav-link">Home</div>
       </li>
       <li id="reports" class="nav-item active <%= 'bold' if current_page?(new_user_path) %>">
         <%# if current_member_verified? %>
           <%#= link_to "Reportes", reports_path, class: "nav-link"  %>
         <%# else %>
-          <div class="nav-link">Elemento 2</div>
+          <div class="nav-link">Restaurantes</div>
         <%# end %>
       </li>
     </ul>

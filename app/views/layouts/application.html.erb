@@ -2,7 +2,12 @@
 <html>
   <head>
     <%= render "layouts/header_content" %>
-    <%= render "application/navigation" %>
+    <div>
+      <a style="display:block;max-width:100px;position:fixed;left:20px;top:0;width:10%;z-index:10000" target="_blank">
+        <%= image_tag "chef_logo.png", id:"chef_logo" %>
+      </a>
+      <%= render "application/navigation" %>
+    </div>
     <%#= render "flash" %>
   </head>
   <%= content_tag :body, data: { action: action_name, controller: controller_name, path: request.path } do %>

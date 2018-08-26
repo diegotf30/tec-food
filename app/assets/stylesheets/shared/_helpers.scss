@@ -30,3 +30,21 @@
 .registration {
   @extend .login;
 }
+
+.navbar{
+  background-color: #2a43b4;
+  margin-top: 96px;
+}
+
+.navbar-light{
+  color: blue;
+}
+
+.navbar-brand{
+  padding-left: 200px;
+}
+
+#carouselExampleIndicators{
+  margin-top: 40px;
+}
+
