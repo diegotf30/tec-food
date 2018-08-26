@@ -15,8 +15,34 @@ ActiveRecord::Schema.define(version: 2018_08_26_021112) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "products", force: :cascade do |t|
+    t.string "name", null: false
+    t.float "price", null: false
+    t.string "ingredients", default: [], array: true
+    t.json "extra_ingredients", default: {}
+    t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_products_on_restaurant_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.float "total", null: false
+    t.integer "purchased_product_ids", default: [], array: true
+    t.datetime "pickedup_at", null: false
+    t.bigint "user_id"
+    t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_purchases_on_restaurant_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name", null: false
+    t.string "type"
+    t.string "opening_hour", null: false
+    t.string "closing_hour", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,4 +67,7 @@ ActiveRecord::Schema.define(version: 2018_08_26_021112) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "restaurants"
+  add_foreign_key "purchases", "restaurants"
+  add_foreign_key "purchases", "users"
 end
