@@ -24,6 +24,15 @@ class InitSchema < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
+    create_table :restaurants do |t|
+      t.string :name, null: false
+      t.string :type
+      t.string :opening_hour, null: false
+      t.string :closing_hour, null: false
+
+      t.timestamps
+    end
+
     create_table :purchases do |t|
       t.float :total, null: false
       t.integer :purchased_product_ids, array: true, default: []
@@ -33,15 +42,6 @@ class InitSchema < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       # belongs_to Restaurant
       t.references :restaurant, foreign_key: true
-      t.timestamps
-    end
-
-    create_table :restaurants do |t|
-      t.string :name, null: false
-      t.string :type
-      t.string :opening_hour, null: false
-      t.string :closing_hour, null: false
-
       t.timestamps
     end
 
