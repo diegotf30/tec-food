@@ -13,10 +13,12 @@ namespace :sample_db do
     end
   end
 
+  task make_user: :environment do
+  end
+
   task destroy: :environment do
     Restaurant.delete_all
     Purchase.delete_all
     Product.delete_all
-    User.delete_all
   end
 end
