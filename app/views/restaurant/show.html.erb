@@ -1,8 +1,13 @@
 <style>
 .parallax {
     /* The image used */
-    background-image: url("https://dummyimage.com/600x500/000/fff");
-
+    <% if @restaurant.id == 1 %>
+      background-image: url("https://i.imgur.com/qwpOQ7O.png");
+    <% elsif @restaurant.id == 2 %>
+      background-image: url("https://i.imgur.com/13kxFzO.png");
+    <% else %>
+      background-image: url("https://i.imgur.com/fSL3xvh.jpg");
+    <% end %>
     /* Set a specific height */
     min-height: 400px;
     min-width: 100%;
@@ -11,7 +16,6 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 </style>
 
@@ -23,14 +27,14 @@
   <div class="col-md-auto"> <h1>Menu</h1></div>
 </div>
 <% if @restaurant %>
-  <div class="row">
+  <div class="row mb-5">
     <% @restaurant.products.each do |product| %>
 
-      <div class="card col-auto" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card col-auto text-center" style="width: 18rem;">
+        <%= image_tag "#{product.name.downcase}_menu.jpg", alt: "chilaquiles", class:"circle"%>
         <div class="card-body">
           <h5 class="card-title"><%=product.name%></h5>
-          <p class="card-text"> <%=product.price%></p>
+          <p class="card-text">$<%=product.price%></p>
           <a href="#" class="btn btn-primary">Detalles</a>
         </div>
       </div>
