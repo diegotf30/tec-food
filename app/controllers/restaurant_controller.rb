@@ -15,7 +15,7 @@ class RestaurantController < ApplicationController
 
   def hours
     restaurant = Restaurant.find_by(id: params[:restaurant_id])
-    hours = { 'messages' => [ { 'text' => "Está abierto de #{restaurant.opening_hours} a #{restaurant.closing_hours}" } ] }.to_json
+    hours = { 'messages' => [ { 'text' => "#{restaurant.name} está abierto de #{restaurant.opening_hour} a #{restaurant.closing_hour}" } ] }.to_json
 
     render(
       json: hours,
@@ -25,7 +25,7 @@ class RestaurantController < ApplicationController
 
   def daily_meal
     restaurant = Restaurant.find_by(id: params[:restaurant_id])
-    meal = { 'messages' => [ { 'text' => "La comida del día es #{daily_meal}" } ] }.to_json
+    meal = { 'messages' => [ { 'text' => "La comida del día es #{restaurant.daily_meal}" } ] }.to_json
 
     render(
       json: meal,
