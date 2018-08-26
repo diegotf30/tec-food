@@ -5,7 +5,7 @@ class RestaurantController < ApplicationController
 
   def menu
     restaurant = Restaurant.find_by(id: params[:restaurant_id])
-    menu = { 'messages' => [ restaurant.products.map { |p| { 'text' => "#{p.name}: $#{p.price}" } } ] }.to_json
+    menu = { 'messages' => restaurant.products.map { |p| { 'text' => "#{p.name}: $#{p.price}" } } }.to_json
 
     render(
       json: menu,
