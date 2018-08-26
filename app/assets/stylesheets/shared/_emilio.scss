@@ -6,6 +6,10 @@
     width: 60%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #chef_logo{
     width: 130px;
 }
@@ -46,8 +50,8 @@
   color: #fff; /* social icon hover color */
 }
 
-.footer {
-  position: absolute;
+footer {
+  position: sticky;
   bottom: 0;
   padding-top: 5px;
   width: 100%;
@@ -60,21 +64,20 @@
     border-color: #eee;
     border-style: solid;
     border-image-width: 1px;
-    padding-left: auto;
-    padding-right: auto;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .order-details{
     float: right;
     text-align: left;
     color: #5cb85c;
-    margin-right: 5em;
+    margin-right: 3em;
 }
 
-.order-img{
+.order-img {
     float: left;
+    flex: 0 0 305px;
 }
 
 .circleBase {
@@ -84,6 +87,5 @@
     height: 200px;
     border: 6px dashed;
     border-color: #5cb85c;
-    margin-left: 5em;
+    margin-left: 3em;
 }
-
