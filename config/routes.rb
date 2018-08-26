@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   #   root 'countries#index', as: :authenticated_root
   # end
 
+  devise_for :users
+
   root 'root#show'
 
   namespace :onboarding do

@@ -2,30 +2,36 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <%= link_to "TecFood", root_path, class: 'navbar-brand' %>
+  <%= link_to "TecFood", root_path, class: 'navbar-brand pr-2' %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li id="countries" class="nav-item active <%= 'bold' if current_page?(root_path) %>">
-        <div class="nav-link">Home</div>
+      <li id="centrales" class="nav-item active <%= 'bold' if current_page?(restaurant_path(1)) %>">
+        <%= link_to "Centrales", restaurant_path(1), class: "nav-link" %>
       </li>
-      <li id="reports" class="nav-item active <%= 'bold' if current_page?(new_user_path) %>">
-        <%# if current_member_verified? %>
-          <%#= link_to "Reportes", reports_path, class: "nav-link"  %>
-        <%# else %>
-          <div class="nav-link">Restaurantes</div>
-        <%# end %>
+      <li id="jubileo" class="nav-item active <%= 'bold' if current_page?(restaurant_path(2)) %>">
+        <%= link_to "Jubileo", restaurant_path(2), class: "nav-link" %>
+      </li>
+      <li id="foodBox" class="nav-item active <%= 'bold' if current_page?(restaurant_path(3)) %>">
+        <%= link_to "Food Box", restaurant_path(3), class: "nav-link" %>
       </li>
     </ul>
-    <%# if current_user %>
+    <% if current_user %>
       <span class="navbar-text bold">
-        <%#= button_to "Salir", destroy_member_session_path, method: :delete, class: "btn btn-danger bold", id: "sign_out" %>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#{orders_path}">Ordenes</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
       </span>
-    <%# else %>
       <span class="navbar-text bold">
-        <%= button_to "Login", new_user_path, method: :get, class: "btn btn-teal bold", id: "sign_in" %>
+        <%= button_to "Salir", destroy_user_session_path, method: :delete, class: "btn btn-danger bold", id: "sign_out" %>
       </span>
-    <%# end %>
+    <% else %>
+      <span class="navbar-text bold">
+        <%= button_to "Login", new_user_session_path, method: :get, class: "btn btn-teal bold", id: "sign_in" %>
+      </span>
+    <% end %>
   </div>
 </nav>
 
